@@ -1,0 +1,181 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Brivora" description="Open source, transparent, post-quantum technology for all people.">
+  <!-- Nav -->
+  <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-black/80 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="mono text-lg font-bold tracking-tight">brivora</a>
+      <div class="flex items-center gap-8">
+        <a href="https://brivora.dev" class="text-sm text-gray-400 hover:text-white transition-colors">Docs</a>
+        <a href="https://github.com/brivorai" class="text-sm text-gray-400 hover:text-white transition-colors">GitHub</a>
+        <a href="https://discord.gg/brivora" class="text-sm text-gray-400 hover:text-white transition-colors">Discord</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="min-h-screen flex flex-col items-center justify-center px-6 pt-16">
+    <div class="max-w-3xl text-center">
+      <h1 class="mono text-5xl md:text-7xl font-bold tracking-tight leading-tight">
+        brivora
+      </h1>
+      <p class="mt-6 text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+        Open source, transparent, post-quantum technology for all people.
+      </p>
+      <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://brivora.dev/getting-started/quick-start/" class="px-8 py-3 bg-white text-black font-medium rounded-lg hover:bg-gray-200 transition-colors text-sm">
+          Get Started
+        </a>
+        <a href="https://github.com/brivorai" class="px-8 py-3 border border-white/20 text-white font-medium rounded-lg hover:border-white/40 transition-colors text-sm">
+          View Source
+        </a>
+      </div>
+      <div class="mt-8">
+        <code class="text-sm text-gray-500">npm install @brivora/crypto @brivora/verify</code>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="mono text-3xl font-bold text-center mb-16">What we build</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Crypto -->
+        <div class="border border-white/10 rounded-xl p-8 hover:border-white/20 transition-colors">
+          <div class="mono text-sm text-gray-500 mb-2">@brivora/crypto</div>
+          <h3 class="text-xl font-semibold mb-3">Post-quantum cryptography</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            Hybrid ML-KEM-768 + ML-DSA-65 + classical crypto. NIST FIPS compliant.
+            Zero config. Pure TypeScript. Works everywhere.
+          </p>
+          <pre class="bg-white/5 rounded-lg p-4 text-sm overflow-x-auto"><code class="text-gray-300"><span class="text-gray-500">import</span> { crypto } <span class="text-gray-500">from</span> <span class="text-green-400">'@brivora/crypto'</span>;
+<span class="text-gray-500">const</span> keys = <span class="text-gray-500">await</span> crypto.createIdentity();
+<span class="text-gray-500">const</span> signed = <span class="text-gray-500">await</span> crypto.sign(data, keys.privateKey);</code></pre>
+          <a href="https://brivora.dev/crypto/overview/" class="inline-block mt-6 text-sm text-gray-400 hover:text-white transition-colors">
+            Read the docs &rarr;
+          </a>
+        </div>
+
+        <!-- Verify -->
+        <div class="border border-white/10 rounded-xl p-8 hover:border-white/20 transition-colors">
+          <div class="mono text-sm text-gray-500 mb-2">@brivora/verify</div>
+          <h3 class="text-xl font-semibold mb-3">Verifiable AI governance</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            Wrap any AI call with governance rules. Get a PQC-signed Merkle root.
+            Independently verifiable. No API. No account. Pure math.
+          </p>
+          <pre class="bg-white/5 rounded-lg p-4 text-sm overflow-x-auto"><code class="text-gray-300"><span class="text-gray-500">const</span> result = <span class="text-gray-500">await</span> verify.govern(
+  () => ai.chat({ model, messages }),
+  { governance: <span class="text-green-400">'eu-ai-act-v1'</span> }
+);</code></pre>
+          <a href="https://brivora.dev/verify/overview/" class="inline-block mt-6 text-sm text-gray-400 hover:text-white transition-colors">
+            Read the docs &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Post-Quantum -->
+  <section class="py-24 px-6 border-t border-white/5">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="mono text-3xl font-bold text-center mb-16">Why post-quantum</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <div class="mono text-4xl font-bold mb-3">2024</div>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            NIST finalized FIPS 203, 204, 205 — the post-quantum cryptographic standards that replace RSA and ECDSA.
+          </p>
+        </div>
+        <div>
+          <div class="mono text-4xl font-bold mb-3">2030</div>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            NSA deadline for national security systems to migrate to post-quantum cryptography. The transition is already underway.
+          </p>
+        </div>
+        <div>
+          <div class="mono text-4xl font-bold mb-3">Q-Day</div>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            The day a quantum computer breaks classical encryption. Every system not using PQC becomes vulnerable. We build for that day.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Properties -->
+  <section class="py-24 px-6 border-t border-white/5">
+    <div class="max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <h3 class="mono text-lg font-semibold mb-3">Zero telemetry</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            No analytics. No network calls. No tracking. No error reporting. No feature flags.
+            Your data never leaves your machine through our code.
+          </p>
+        </div>
+        <div>
+          <h3 class="mono text-lg font-semibold mb-3">AGPL-3.0</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Fully open source. Inspect every line. Fork it. Build on it.
+            Free forever for open source projects. Commercial licenses available.
+          </p>
+        </div>
+        <div>
+          <h3 class="mono text-lg font-semibold mb-3">Pure TypeScript</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            No native modules. No WASM. Works everywhere: Node.js, Deno, Bun, browsers.
+            Built on audited @noble cryptographic primitives.
+          </p>
+        </div>
+        <div>
+          <h3 class="mono text-lg font-semibold mb-3">Self-contained proofs</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Every proof includes everything needed for independent verification.
+            No API call. No account. No external dependency. Pure math.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-16 px-6 border-t border-white/5">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8">
+      <div>
+        <div class="mono text-lg font-bold mb-2">brivora</div>
+        <p class="text-gray-500 text-sm">Open source, transparent, post-quantum<br />technology for all people.</p>
+      </div>
+      <div class="flex gap-12">
+        <div>
+          <div class="text-sm font-medium mb-3">Product</div>
+          <div class="flex flex-col gap-2">
+            <a href="https://www.npmjs.com/package/@brivora/crypto" class="text-sm text-gray-500 hover:text-white transition-colors">@brivora/crypto</a>
+            <a href="https://www.npmjs.com/package/@brivora/verify" class="text-sm text-gray-500 hover:text-white transition-colors">@brivora/verify</a>
+          </div>
+        </div>
+        <div>
+          <div class="text-sm font-medium mb-3">Resources</div>
+          <div class="flex flex-col gap-2">
+            <a href="https://brivora.dev" class="text-sm text-gray-500 hover:text-white transition-colors">Documentation</a>
+            <a href="https://github.com/brivorai" class="text-sm text-gray-500 hover:text-white transition-colors">GitHub</a>
+          </div>
+        </div>
+        <div>
+          <div class="text-sm font-medium mb-3">Social</div>
+          <div class="flex flex-col gap-2">
+            <a href="https://x.com/brivorai" class="text-sm text-gray-500 hover:text-white transition-colors">X / Twitter</a>
+            <a href="https://discord.gg/brivora" class="text-sm text-gray-500 hover:text-white transition-colors">Discord</a>
+            <a href="https://instagram.com/brivorai" class="text-sm text-gray-500 hover:text-white transition-colors">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-5xl mx-auto mt-12 pt-8 border-t border-white/5 text-center">
+      <p class="text-gray-600 text-xs">&copy; 2026 Brivora, LLC. AGPL-3.0-or-later.</p>
+    </div>
+  </footer>
+</Layout>
