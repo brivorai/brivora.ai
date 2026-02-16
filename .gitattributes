@@ -1,0 +1,5 @@
+# Language detection
+*.astro linguist-language=Astro
+*.mjs linguist-language=Astro
+*.ts linguist-language=Astro
+*.md linguist-documentation
