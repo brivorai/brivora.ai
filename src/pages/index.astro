@@ -1,5 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const cryptoCode = `<span class="text-gray-500">import</span> { crypto } <span class="text-gray-500">from</span> <span class="text-green-400">'@brivora/crypto'</span>;
+<span class="text-gray-500">const</span> keys = <span class="text-gray-500">await</span> crypto.createIdentity();
+<span class="text-gray-500">const</span> signed = <span class="text-gray-500">await</span> crypto.sign(data, keys.privateKey);`;
+
+const verifyCode = `<span class="text-gray-500">const</span> result = <span class="text-gray-500">await</span> verify.govern(
+  () =&gt; ai.chat({ model, messages }),
+  { governance: <span class="text-green-400">'eu-ai-act-v1'</span> }
+);`;
 ---
 
 <Layout title="Brivora" description="Open source, transparent, post-quantum technology for all people.">
@@ -51,11 +60,9 @@ import Layout from '../layouts/Layout.astro';
             Hybrid ML-KEM-768 + ML-DSA-65 + classical crypto. NIST FIPS compliant.
             Zero config. Pure TypeScript. Works everywhere.
           </p>
-          <pre class="bg-white/5 rounded-lg p-4 text-sm overflow-x-auto"><code class="text-gray-300"><span class="text-gray-500">import</span> { crypto } <span class="text-gray-500">from</span> <span class="text-green-400">'@brivora/crypto'</span>;
-<span class="text-gray-500">const</span> keys = <span class="text-gray-500">await</span> crypto.createIdentity();
-<span class="text-gray-500">const</span> signed = <span class="text-gray-500">await</span> crypto.sign(data, keys.privateKey);</code></pre>
+          <pre class="bg-white/5 rounded-lg p-4 text-sm overflow-x-auto"><code class="text-gray-300" set:html={cryptoCode} /></pre>
           <a href="https://brivora.dev/crypto/overview/" class="inline-block mt-6 text-sm text-gray-400 hover:text-white transition-colors">
-            Read the docs &rarr;
+            Read the docs →
           </a>
         </div>
 
@@ -67,12 +74,9 @@ import Layout from '../layouts/Layout.astro';
             Wrap any AI call with governance rules. Get a PQC-signed Merkle root.
             Independently verifiable. No API. No account. Pure math.
           </p>
-          <pre class="bg-white/5 rounded-lg p-4 text-sm overflow-x-auto"><code class="text-gray-300"><span class="text-gray-500">const</span> result = <span class="text-gray-500">await</span> verify.govern(
-  () => ai.chat({ model, messages }),
-  { governance: <span class="text-green-400">'eu-ai-act-v1'</span> }
-);</code></pre>
+          <pre class="bg-white/5 rounded-lg p-4 text-sm overflow-x-auto"><code class="text-gray-300" set:html={verifyCode} /></pre>
           <a href="https://brivora.dev/verify/overview/" class="inline-block mt-6 text-sm text-gray-400 hover:text-white transition-colors">
-            Read the docs &rarr;
+            Read the docs →
           </a>
         </div>
       </div>
